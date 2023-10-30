@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> Hexo</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">Hexo</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['嘻嘻哈哈', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  <ul class="ads">
+    
+        <li>
+            <a target="_blank" rel="noopener" href="https://curl.qcloud.com/kvO7hb43">
+                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5ccc.jpg" width="300" alt="云服务器限时秒杀">
+            </a>
+        </li>
+    
+        <li>
+            <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8630075">
+                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5cd7.png" width="300" alt="vultr优惠vps">
+            </a>
+        </li>
+    
+</ul>
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-第一篇文章"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2023/10/30/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="article-date">
+  <time datetime="2023-10-30T09:07:54.959Z" itemprop="datePublished">2023-10-30</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="1-安装教程"><a href="#1-安装教程" class="headerlink" title="1. 安装教程"></a>1. 安装教程</h1><pre><code>先执行pip uninstall ultralytics 把安装在环境里面的ultralytics库卸载干净
+卸载完成后同样再执行一次,如果出现WARNING: Skipping ultralytics as it is not installed.证明已经卸载干净.
+然后再执行 python setup.py develop 执行这个命令后,对当前ultralytics都会生效.
+具体可看: https://blog.csdn.net/qq_16568205/article/details/110433714
+
+我的实验环境:
+torch: 1.13.1
+torchvision: 0.14.1
+
+一些额外的包安装命令:
+pip install timm thop efficientnet_pytorch einops -i https://pypi.tuna.tsinghua.edu.cn/simple
+以下主要是使用dyhead必定需要安装的包,如果安装不成功dyhead没办法正常使用!
+pip install -U openmim
+mim install mmengine
+mim install &quot;mmcv&gt;=2.0.0&quot;
+</code></pre>
+<h1 id="2-训练-train-py"><a href="#2-训练-train-py" class="headerlink" title="2. 训练 train.py"></a>2. 训练 train.py</h1><p>训练脚本支持导入自己的配置文件基础上导入预训练权重,不需要额外修改,大大方便使用.<br>weight参数为’’,默认就是不载入预训练权重.</p>
+<pre><code>parser.add_argument(&#39;--yaml&#39;, type=str, default=&#39;ultralytics/models/v8/yolov8n.yaml&#39;, help=&#39;model.yaml path&#39;)
+parser.add_argument(&#39;--weight&#39;, type=str, default=&#39;&#39;, help=&#39;pretrained model path&#39;)
+parser.add_argument(&#39;--cfg&#39;, type=str, default=&#39;hyp.yaml&#39;, help=&#39;hyperparameters path&#39;)
+parser.add_argument(&#39;--data&#39;, type=str, default=&#39;ultralytics/datasets/coco128.yaml&#39;, help=&#39;data yaml path&#39;)
+
+parser.add_argument(&#39;--epochs&#39;, type=int, default=100, help=&#39;number of epochs to train for&#39;)
+parser.add_argument(&#39;--patience&#39;, type=int, default=100, help=&#39;EarlyStopping patience (epochs without improvement)&#39;)
+parser.add_argument(&#39;--unamp&#39;, action=&#39;store_true&#39;, help=&#39;Unuse Automatic Mixed Precision (AMP) training&#39;)
+parser.add_argument(&#39;--batch&#39;, type=int, default=16, help=&#39;number of images per batch (-1 for AutoBatch)&#39;)
+parser.add_argument(&#39;--imgsz&#39;, type=int, default=640, help=&#39;size of input images as integer&#39;)
+parser.add_argument(&#39;--cache&#39;, type=str, nargs=&#39;?&#39;, const=&#39;ram&#39;, help=&#39;image --cache ram/disk&#39;)
+parser.add_argument(&#39;--device&#39;, type=str, default=&#39;&#39;, help=&#39;cuda device, i.e. 0 or 0,1,2,3 or cpu&#39;)
+parser.add_argument(&#39;--workers&#39;, type=int, default=4, help=&#39;max dataloader workers (per RANK in DDP mode)&#39;)
+parser.add_argument(&#39;--project&#39;, type=str, default=ROOT / &#39;runs/train&#39;, help=&#39;save to project/name&#39;)
+parser.add_argument(&#39;--name&#39;, type=str, default=&#39;exp&#39;, help=&#39;save to project/name&#39;)
+parser.add_argument(&#39;--resume&#39;, type=str, default=&#39;&#39;, help=&#39;resume training from last checkpoint&#39;)
+parser.add_argument(&#39;--optimizer&#39;, type=str, choices=[&#39;SGD&#39;, &#39;Adam&#39;, &#39;Adamax&#39;, &#39;NAdam&#39;, &#39;RAdam&#39;, &#39;AdamW&#39;, &#39;RMSProp&#39;, &#39;auto&#39;], default=&#39;SGD&#39;, help=&#39;optimizer (auto -&gt; ultralytics/yolo/engine/trainer.py in build_optimizer funciton.)&#39;)
+parser.add_argument(&#39;--close_mosaic&#39;, type=int, default=0, help=&#39;(int) disable mosaic augmentation for final epochs&#39;)
+parser.add_argument(&#39;--info&#39;, action=&quot;store_true&quot;, help=&#39;model info verbose&#39;)
+
+parser.add_argument(&#39;--save&#39;, type=str2bool, default=&#39;True&#39;, help=&#39;save train checkpoints and predict results&#39;)
+parser.add_argument(&#39;--save-period&#39;, type=int, default=-1, help=&#39;Save checkpoint every x epochs (disabled if &lt; 1)&#39;)
+parser.add_argument(&#39;--exist-ok&#39;, action=&#39;store_true&#39;, help=&#39;existing project/name ok, do not increment&#39;)
+parser.add_argument(&#39;--seed&#39;, type=int, default=0, help=&#39;Global training seed&#39;)
+parser.add_argument(&#39;--deterministic&#39;, action=&quot;store_true&quot;, default=True, help=&#39;whether to enable deterministic mode&#39;)
+parser.add_argument(&#39;--single-cls&#39;, action=&#39;store_true&#39;, help=&#39;train multi-class data as single-class&#39;)
+parser.add_argument(&#39;--rect&#39;, action=&#39;store_true&#39;, help=&#39;rectangular training&#39;)
+parser.add_argument(&#39;--cos-lr&#39;, action=&#39;store_true&#39;, help=&#39;cosine LR scheduler&#39;)
+parser.add_argument(&#39;--fraction&#39;, type=float, default=1.0, help=&#39;dataset fraction to train on (default is 1.0, all images in train set)&#39;)
+parser.add_argument(&#39;--profile&#39;, action=&#39;store_true&#39;, help=&#39;profile ONNX and TensorRT speeds during training for loggers&#39;)
+
+# Segmentation
+parser.add_argument(&#39;--overlap_mask&#39;, type=str2bool, default=&#39;True&#39;, help=&#39;masks should overlap during training (segment train only)&#39;)
+parser.add_argument(&#39;--mask_ratio&#39;, type=int, default=4, help=&#39;mask downsample ratio (segment train only)&#39;)
+
+# Classification
+parser.add_argument(&#39;--dropout&#39;, type=float, default=0.0, help=&#39;use dropout regularization (classify train only)&#39;)
+</code></pre>
+<h1 id="3-测试-val-py"><a href="#3-测试-val-py" class="headerlink" title="3. 测试 val.py"></a>3. 测试 val.py</h1><p>验证脚本基本与yolov5使用类似,指定对应参数即可.</p>
+<pre><code>parser.add_argument(&#39;--weight&#39;, type=str, default=&#39;yolov8n.pt&#39;, help=&#39;training model path&#39;)
+parser.add_argument(&#39;--data&#39;, type=str, default=&#39;ultralytics/datasets/coco128.yaml&#39;, help=&#39;data yaml path&#39;)
+parser.add_argument(&#39;--imgsz&#39;, type=int, default=640, help=&#39;size of input images as integer&#39;)
+parser.add_argument(&#39;--batch&#39;, type=int, default=16, help=&#39;number of images per batch (-1 for AutoBatch)&#39;)
+parser.add_argument(&#39;--split&#39;, type=str, default=&#39;test&#39;, choices=[&#39;train&#39;, &#39;val&#39;, &#39;test&#39;], help=&#39;dataset split to use for validation, i.e. val, test or train&#39;)
+parser.add_argument(&#39;--project&#39;, type=str, default=&#39;runs/val&#39;, help=&#39;project name&#39;)
+parser.add_argument(&#39;--name&#39;, type=str, default=&#39;exp&#39;, help=&#39;experiment name (project/name)&#39;)
+parser.add_argument(&#39;--save_txt&#39;, action=&quot;store_true&quot;, help=&#39;save results as .txt file&#39;)
+parser.add_argument(&#39;--save_json&#39;, action=&quot;store_true&quot;, help=&#39;save results to JSON file&#39;)
+parser.add_argument(&#39;--save_hybrid&#39;, action=&quot;store_true&quot;, help=&#39;save hybrid version of labels (labels + additional predictions)&#39;)
+parser.add_argument(&#39;--conf&#39;, type=float, default=0.001, help=&#39;object confidence threshold for detection (0.001 in val)&#39;)
+parser.add_argument(&#39;--iou&#39;, type=float, default=0.65, help=&#39;intersection over union (IoU) threshold for NMS&#39;)
+parser.add_argument(&#39;--max_det&#39;, type=int, default=300, help=&#39;maximum number of detections per image&#39;)
+parser.add_argument(&#39;--half&#39;, action=&quot;store_true&quot;, help=&#39;use half precision (FP16)&#39;)
+parser.add_argument(&#39;--dnn&#39;, action=&quot;store_true&quot;, help=&#39;use OpenCV DNN for ONNX inference&#39;)
+parser.add_argument(&#39;--plots&#39;, action=&quot;store_true&quot;, default=True, help=&#39;ave plots during train/val&#39;)
+</code></pre>
+<h1 id="4-推理-predict-py"><a href="#4-推理-predict-py" class="headerlink" title="4. 推理 predict.py"></a>4. 推理 predict.py</h1><p>推理脚本支持检测和跟踪一体化,让用户更加方便使用.<br>跟踪的时候只需要把mode参数设置为track,tracker参数支持botsort和bytetrack,自行切换配置文件即可.</p>
+<pre><code>parser.add_argument(&#39;--weight&#39;, type=str, default=&#39;yolov8n.pt&#39;, help=&#39;training model path&#39;)
+parser.add_argument(&#39;--source&#39;, type=str, default=&#39;ultralytics/assets&#39;, help=&#39;source directory for images or videos&#39;)
+parser.add_argument(&#39;--conf&#39;, type=float, default=0.25, help=&#39;object confidence threshold for detection&#39;)
+parser.add_argument(&#39;--iou&#39;, type=float, default=0.7, help=&#39;intersection over union (IoU) threshold for NMS&#39;)
+parser.add_argument(&#39;--mode&#39;, type=str, default=&#39;predict&#39;, choices=[&#39;predict&#39;, &#39;track&#39;], help=&#39;predict mode or track mode&#39;)
+parser.add_argument(&#39;--project&#39;, type=str, default=&#39;runs/detect&#39;, help=&#39;project name&#39;)
+parser.add_argument(&#39;--name&#39;, type=str, default=&#39;exp&#39;, help=&#39;experiment name (project/name)&#39;)
+parser.add_argument(&#39;--show&#39;, action=&quot;store_true&quot;, help=&#39;show results if possible&#39;)
+parser.add_argument(&#39;--save_txt&#39;, action=&quot;store_true&quot;, help=&#39;save results as .txt file&#39;)
+parser.add_argument(&#39;--save_conf&#39;, action=&quot;store_true&quot;, help=&#39;save results with confidence scores&#39;)
+parser.add_argument(&#39;--show_labels&#39;, action=&quot;store_true&quot;, default=True, help=&#39;show object labels in plots&#39;)
+parser.add_argument(&#39;--show_conf&#39;, action=&quot;store_true&quot;, default=True, help=&#39;show object confidence scores in plots&#39;)
+parser.add_argument(&#39;--vid_stride&#39;, type=int, default=1, help=&#39;video frame-rate stride&#39;)
+parser.add_argument(&#39;--line_width&#39;, type=int, default=3, help=&#39;line width of the bounding boxes&#39;)
+parser.add_argument(&#39;--visualize&#39;, action=&quot;store_true&quot;, help=&#39;visualize model features&#39;)
+parser.add_argument(&#39;--augment&#39;, action=&quot;store_true&quot;, help=&#39;apply image augmentation to prediction sources&#39;)
+parser.add_argument(&#39;--agnostic_nms&#39;, action=&quot;store_true&quot;, help=&#39;class-agnostic NMS&#39;)
+parser.add_argument(&#39;--classes&#39;, nargs=&#39;+&#39;, type=int, help=&#39;filter by class: --classes 0, or --classes 0 2 3&#39;)
+parser.add_argument(&#39;--retina_masks&#39;, action=&quot;store_true&quot;, help=&#39;use high-resolution segmentation masks&#39;)
+parser.add_argument(&#39;--boxes&#39;, action=&quot;store_true&quot;, default=True, help=&#39;Show boxes in segmentation predictions&#39;)
+parser.add_argument(&#39;--save&#39;, action=&quot;store_true&quot;, default=True, help=&#39;save result&#39;)
+parser.add_argument(&#39;--tracker&#39;, type=str, default=&#39;bytetrack.yaml&#39;, choices=[&#39;botsort.yaml&#39;, &#39;bytetrack.yaml&#39;], help=&#39;tracker type, [botsort.yaml, bytetrack.yaml]&#39;)
+</code></pre>
+<h1 id="5-模型配置文件"><a href="#5-模型配置文件" class="headerlink" title="5. 模型配置文件"></a>5. 模型配置文件</h1><p>模型配置文件都在ultralytics&#x2F;models&#x2F;v8中.<br>yolov8有五种大小的模型</p>
+<pre><code>YOLOv8n summary: 225 layers,  3157200 parameters,  3157184 gradients,   8.9 GFLOPs
+YOLOv8s summary: 225 layers, 11166560 parameters, 11166544 gradients,  28.8 GFLOPs
+YOLOv8m summary: 295 layers, 25902640 parameters, 25902624 gradients,  79.3 GFLOPs
+YOLOv8l summary: 365 layers, 43691520 parameters, 43691504 gradients, 165.7 GFLOPs
+YOLOv8x summary: 365 layers, 68229648 parameters, 68229632 gradients, 258.5 GFLOPs
+</code></pre>
+<p>怎么指定使用哪一种大小的模型呢？假设我选择的配置文件是yolov8.yaml,我想选择m大小的模型,则train.py中的yaml参数指定为ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8m.yaml即可,同理,如果我想指定s大小的模型,则train.py中的yaml参数指定为ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8s.yaml即可,如果直接设置为ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8.yaml,则默认使用n大小模型.(V5同理)</p>
+<h1 id="6-关闭AMP混合精度训练"><a href="#6-关闭AMP混合精度训练" class="headerlink" title="6. 关闭AMP混合精度训练"></a>6. 关闭AMP混合精度训练</h1><ol>
+<li>如果你是使用命令行运行的话,只需要在训练参数中添加–unamp即可.</li>
+<li>如果你是直接代码运行的话,找到这个参数parser.add_argument(‘–unamp’, action&#x3D;’store_true’, help&#x3D;’Unuse Automatic Mixed Precision (AMP) training’),修改为parser.add_argument(‘–unamp’, action&#x3D;’store_true’, default&#x3D;True, help&#x3D;’Unuse Automatic Mixed Precision (AMP) training’)即可.</li>
+</ol>
+<h1 id="7-怎么像yolov5那样输出每一层的参数-计算量？"><a href="#7-怎么像yolov5那样输出每一层的参数-计算量？" class="headerlink" title="7. 怎么像yolov5那样输出每一层的参数,计算量？"></a>7. 怎么像yolov5那样输出每一层的参数,计算量？</h1><p>只需要在训练命令指定info参数即可.(v1.5版本中增加输出fuse后的信息)<br>需要注意的是指定了info参数不会进行训练,只会输出每一层的一些信息.  </p>
+<pre><code>python train.py --yaml ultralytics/models/v8/yolov8n-fasternet.yaml --info
+</code></pre>
+<h1 id="8-如何替换主干？"><a href="#8-如何替换主干？" class="headerlink" title="8. 如何替换主干？"></a>8. 如何替换主干？</h1><p>可以看项目视频-替换主干示例教程.</p>
+<h1 id="9-如何替换yolov5-yolov8中的激活函数？"><a href="#9-如何替换yolov5-yolov8中的激活函数？" class="headerlink" title="9. 如何替换yolov5,yolov8中的激活函数？"></a>9. 如何替换yolov5,yolov8中的激活函数？</h1><p>详细可参考ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-act.yaml,ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-act.yaml.<br>但是部分激活函数替换后使用info参数输出每一层的参数和计算量的时候有可能会报错,看github上是说thop不支持重用模块,应该是thop的一个bug吧,有解决方案的同学可以联系.(当然这个是不会影响训练)</p>
+<h1 id="10-目前自带的一些改进方案-持续更新"><a href="#10-目前自带的一些改进方案-持续更新" class="headerlink" title="10. 目前自带的一些改进方案(持续更新)"></a>10. 目前自带的一些改进方案(持续更新)</h1><p><a id="b"></a></p>
+<h4 id="目前支持的一些block-yolov5默认C3-yolov8默认C2f"><a href="#目前支持的一些block-yolov5默认C3-yolov8默认C2f" class="headerlink" title="目前支持的一些block (yolov5默认C3,yolov8默认C2f)"></a>目前支持的一些block (yolov5默认C3,yolov8默认C2f)</h4><p>C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, VoVGSCSP, VoVGSCSPC, C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv</p>
+<h3 id="YOLOV5-AnchorFree-DFL-TAL-官方预训练权重github链接"><a href="#YOLOV5-AnchorFree-DFL-TAL-官方预训练权重github链接" class="headerlink" title="YOLOV5 (AnchorFree+DFL+TAL) 官方预训练权重github链接"></a>YOLOV5 (AnchorFree+DFL+TAL) <a target="_blank" rel="noopener" href="https://github.com/ultralytics/assets/releases">官方预训练权重github链接</a></h3><h4 id="YOLOV5的使用方式跟YOLOV8一样-就是选择配置文件选择v5的即可"><a href="#YOLOV5的使用方式跟YOLOV8一样-就是选择配置文件选择v5的即可" class="headerlink" title="YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可."></a>YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.</h4><ol>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-fasternet.yaml</p>
+<p>fasternet替换yolov5主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-timm.yaml</p>
+<p>使用timm支持的主干网络替换yolov5主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-dyhead.yaml</p>
+<p>添加基于注意力机制的目标检测头到yolov5中.</p>
+</li>
+<li><p>增加Adaptive Training Sample Selection匹配策略.</p>
+<p>在ultralytics&#x2F;yolo&#x2F;utils&#x2F;loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.<br>此ATSS匹配策略目前占用显存比较大,因此使用的时候需要设置更小的batch,后续会进行优化这一功能.</p>
+</li>
+<li><p>Asymptotic Feature Pyramid Network<a target="_blank" rel="noopener" href="https://github.com/gyyang23/AFPN/tree/master">reference</a></p>
+<p>a. ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-AFPN-P345.yaml<br>b. ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-AFPN-P345-Custom.yaml<br>c. ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-AFPN-P2345.yaml<br>d. ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-AFPN-P2345-Custom.yaml<br>其中Custom中的block具体支持<a href="#b">链接</a></p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-bifpn.yaml</p>
+<p>添加BIFPN到yolov5中.<br>其中BIFPN中有三个可选参数：</p>
+<ol>
+<li>Fusion<br>其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)<br>其中weight, adaptive, concat出自<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=q2ZaVU6bEsT">paper链接-Figure 3</a></li>
+<li>node_mode<br>其中目前(后续会更新喔)支持这些<a href="#b">结构</a></li>
+<li>head_channel<br>BIFPN中的通道数,默认设置为256.</li>
+</ol>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-C3-CloAtt.yaml</p>
+<p>使用C3-CloAtt替换C3.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C3中的Bottleneck中)(需要看<a href="#a">常见错误和解决方案的第五点</a>)  </p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-RevCol.yaml</p>
+<p>使用(ICLR2023)Reversible Column Networks对yolov5主干进行重设计.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-LSKNet.yaml</p>
+<p>LSKNet(2023旋转目标检测SOTA的主干)替换yolov5主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-C3-SCConv.yaml</p>
+<p>SCConv(CVPR2020 <a target="_blank" rel="noopener" href="http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)%E4%B8%8EC3%E8%9E%8D%E5%90%88">http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)与C3融合</a>.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-C3-SCcConv.yaml</p>
+<p>ScConv(CVPR2023 <a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)%E4%B8%8EC3%E8%9E%8D%E5%90%88">https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)与C3融合</a>.<br>(取名为SCcConv的原因是在windows下命名是不区分大小写的)</p>
+</li>
+<li><p>MPDiou.<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2307.07662v1.pdf">论文链接</a></p>
+<p>在ultralytics&#x2F;yolo&#x2F;utils&#x2F;loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-LAWDS.yaml</p>
+<p>Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-C3-EMSC.yaml</p>
+<p>Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-C3-EMSCP.yaml</p>
+<p>Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v5&#x2F;yolov5-RCSOSA.yaml</p>
+<p>使用<a target="_blank" rel="noopener" href="https://github.com/mkang315/RCS-YOLO/tree/main">RCS-YOLO</a>中的RCSOSA替换C3.</p>
+</li>
+</ol>
+<h3 id="YOLOV8"><a href="#YOLOV8" class="headerlink" title="YOLOV8"></a>YOLOV8</h3><ol>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-efficientViT.yaml</p>
+<p>(CVPR2023)efficientViT替换yolov8主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-fasternet.yaml</p>
+<p>fasternet替换yolov8主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-timm.yaml</p>
+<p>使用timm支持的主干网络替换yolov8主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-convnextv2.yaml</p>
+<p>使用convnextv2网络替换yolov8主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-dyhead.yaml</p>
+<p>添加基于注意力机制的目标检测头到yolov8中.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-bifpn.yaml</p>
+<p>添加BIFPN到yolov8中.<br>其中BIFPN中有三个可选参数：</p>
+<ol>
+<li>Fusion<br>其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)<br>其中weight, adaptive, concat出自<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=q2ZaVU6bEsT">paper链接-Figure 3</a></li>
+<li>node_mode<br>其中目前(后续会更新喔)支持这些<a href="#b">结构</a></li>
+<li>head_channel<br>BIFPN中的通道数,默认设置为256.</li>
+</ol>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-Faster.yaml</p>
+<p>使用C2f-Faster替换C2f.(使用FasterNet中的FasterBlock替换C2f中的Bottleneck)</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-ODConv.yaml</p>
+<p>使用C2f-ODConv替换C2f.(使用ODConv替换C2f中的Bottleneck中的Conv)</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-EfficientFormerV2.yaml</p>
+<p>使用EfficientFormerV2网络替换yolov8主干.(需要看<a href="#a">常见错误和解决方案的第五点</a>)  </p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-Faster-EMA.yaml</p>
+<p>使用C2f-Faster-EMA替换C2f.(C2f-Faster-EMA推荐可以放在主干上,Neck和head部分可以选择C2f-Faster)</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-DBB.yaml</p>
+<p>使用C2f-DBB替换C2f.(使用DiverseBranchBlock替换C2f中的Bottleneck中的Conv)</p>
+</li>
+<li><p>增加Adaptive Training Sample Selection匹配策略.</p>
+<p>在ultralytics&#x2F;yolo&#x2F;utils&#x2F;loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.<br>此ATSS匹配策略目前占用显存比较大,因此使用的时候需要设置更小的batch,后续会进行优化这一功能.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-slimneck.yaml</p>
+<p>使用VoVGSCSP\VoVGSCSPC和GSConv替换yolov8 neck中的C2f和Conv.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-attention.yaml</p>
+<p>可以看项目视频-如何在yaml配置文件中添加注意力层<br>多种注意力机制在yolov8中的使用. <a target="_blank" rel="noopener" href="https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention">多种注意力机制github地址</a></p>
+</li>
+<li><p>Asymptotic Feature Pyramid Network<a target="_blank" rel="noopener" href="https://github.com/gyyang23/AFPN/tree/master">reference</a></p>
+<p>a. ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-AFPN-P345.yaml<br>b. ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-AFPN-P345-Custom.yaml<br>c. ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-AFPN-P2345.yaml<br>d. ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-AFPN-P2345-Custom.yaml<br>其中Custom中的block支持这些<a href="#b">结构</a></p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-vanillanet.yaml</p>
+<p>vanillanet替换yolov8主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-CloAtt.yaml</p>
+<p>使用C2f-CloAtt替换C2f.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C2f中的Bottleneck中)(需要看<a href="#a">常见错误和解决方案的第五点</a>)  </p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-RevCol.yaml</p>
+<p>使用(ICLR2023)Reversible Column Networks对yolov8主干进行重设计.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-LSKNet.yaml</p>
+<p>LSKNet(2023旋转目标检测SOTA的主干)替换yolov8主干.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-SCConv.yaml</p>
+<p>SCConv(CVPR2020 <a target="_blank" rel="noopener" href="http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)%E4%B8%8EC2f%E8%9E%8D%E5%90%88">http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)与C2f融合</a>.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-SCcConv.yaml</p>
+<p>ScConv(CVPR2023 <a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)%E4%B8%8EC2f%E8%9E%8D%E5%90%88">https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)与C2f融合</a>.<br>(取名为SCcConv的原因是在windows下命名是不区分大小写的)</p>
+</li>
+<li><p>MPDiou.<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2307.07662v1.pdf">论文链接</a></p>
+<p>在ultralytics&#x2F;yolo&#x2F;utils&#x2F;loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-LAWDS.yaml</p>
+<p>Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-EMSC.yaml</p>
+<p>Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-C2f-EMSCP.yaml</p>
+<p>Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.</p>
+</li>
+<li><p>ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8-RCSOSA.yaml</p>
+<p>使用<a target="_blank" rel="noopener" href="https://github.com/mkang315/RCS-YOLO/tree/main">RCS-YOLO</a>中的RCSOSA替换C2f.</p>
+</li>
+</ol>
+<h1 id="11-如何进行断点续训"><a href="#11-如何进行断点续训" class="headerlink" title="11. 如何进行断点续训"></a>11. 如何进行断点续训</h1><p>可以看项目视频-如何进行断点续训.<br>train.py中有一个参数是resume,在yolov5中,这个参数只需要设定为True,其就会继续上次没有训练完的任务,但是在yolov8中其是指定一个pt的路径,只需要在resume中指定对应未完成任务中的last.pt即可,如下所示:</p>
+<pre><code>python train.py --weight yolov8n.pt --yaml ultralytics/models/v8/yolov8n.yaml --data /home/hjj/Desktop/dataset/dataset_person/data.yaml --workers 8 --batch 32 --fraction 0.1
+python train.py --data /home/hjj/Desktop/dataset/dataset_person/data.yaml --workers 8 --batch 32 --fraction 0.1 --resume runs/train/exp/weights/last.pt
+</code></pre>
+<h1 id="12-如何计算COCO指标"><a href="#12-如何计算COCO指标" class="headerlink" title="12. 如何计算COCO指标"></a>12. 如何计算COCO指标</h1><p>可以看项目视频-计算COCO指标教程.  </p>
+<h1 id="13-绘制曲线对比图"><a href="#13-绘制曲线对比图" class="headerlink" title="13. 绘制曲线对比图"></a>13. 绘制曲线对比图</h1><p>在plot_curve.py中的names指定runs&#x2F;train中的训练结果名字name即可.<br>比如目前runs&#x2F;train中有exp,exp1,exp2这三个文件夹,plot_curve.py中names中的值为:[‘exp’, ‘exp1’, ‘exp2’],运行后会自动保存为metrice_curve.png和loss_curve.png在当前运行的目录下.</p>
+<h1 id="常见错误和解决方案-如果是跑自带的一些配置文件报错可以先看看第十大点对应的配置文件是否有提示需要修改内容"><a href="#常见错误和解决方案-如果是跑自带的一些配置文件报错可以先看看第十大点对应的配置文件是否有提示需要修改内容" class="headerlink" title="常见错误和解决方案(如果是跑自带的一些配置文件报错可以先看看第十大点对应的配置文件是否有提示需要修改内容)"></a>常见错误和解决方案(如果是跑自带的一些配置文件报错可以先看看第十大点对应的配置文件是否有提示需要修改内容)</h1><ol>
+<li><p>RuntimeError: xxxxxxxxxxx does not have a deterministic implementation, but you set ‘torch.use_deterministic_algorithms(True)’…..</p>
+<p>解决方案：在ultralytics&#x2F;yolo&#x2F;utils&#x2F;torch_utils.py中init_seeds函数中把torch.use_deterministic_algorithms里面的True改为False</p>
+</li>
+<li><p>ModuleNotFoundError：No module named xxx</p>
+<p>解决方案：缺少对应的包，先把第一大点的安装教程的安装命令进行安装一下，如果还是缺少显示缺少包，安装对应的包即可(xxx就是对应的包).</p>
+</li>
+<li><p>OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized.  </p>
+<p>解决方案：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/599835290">https://zhuanlan.zhihu.com/p/599835290</a></p>
+</li>
+<li><p>训练过程中loss出现nan.</p>
+<p>可以尝试在训练的时候加上–unamp关闭AMP混合精度训练.</p>
+</li>
+</ol>
+<p><a id="a"></a></p>
+<ol start="5">
+<li><p>固定640x640尺寸的解决方案.</p>
+<p>运行train.py中的时候需要在ultralytics&#x2F;yolo&#x2F;v8&#x2F;detect&#x2F;train.py的DetectionTrainer class中的build_dataset函数中的rect&#x3D;(True if mode &#x3D;&#x3D; ‘val’ else False)中的True改为False.这个是因为EfficientFormerV2固定输入640x640导致的,其他模型可以修改回去.<br>运行val.py不需要改.<br>运行detect.py中的时候需要在ultralytics&#x2F;yolo&#x2F;engine&#x2F;predictor.py找到函数def pre_transform(self, im),在LetterBox中的auto改为False,其他模型可以修改回去.  </p>
+</li>
+<li><p>多卡训练问题.<a target="_blank" rel="noopener" href="https://docs.ultralytics.com/yolov5/tutorials/multi_gpu_training/#multi-gpu-dataparallel-mode-not-recommended:~:text=just%201%20GPU.-,Multi%2DGPU%20DistributedDataParallel%20Mode%20(%E2%9C%85%20recommended),-You%20will%20have">参考链接</a></p>
+<p>python -m torch.distributed.run –nproc_per_node 2 train.py –weight yolov8n.pt –yaml ultralytics&#x2F;models&#x2F;v8&#x2F;yolov8n.yaml –data &#x2F;home&#x2F;hjj&#x2F;Desktop&#x2F;dataset&#x2F;dataset_person&#x2F;data.yaml –workers 8 –batch 32 –device 0,1  </p>
+</li>
+<li><p>指定显卡训练.</p>
+<p>参考链接:<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_55097528/article/details/130323125">https://blog.csdn.net/m0_55097528/article/details/130323125</a><br>简单来说就是用这个来代替device参数.</p>
+</li>
+</ol>
+<h1 id="常见疑问"><a href="#常见疑问" class="headerlink" title="常见疑问"></a>常见疑问</h1><ol>
+<li><p>After Fuse指的是什么？</p>
+<p>Fuse是指模型的一些模块进行融合,最常见的就是conv和bn层进行融合,在训练的时候模型是存在conv和bn的,但在推理的过程中,模型在初始化的时候会进行模型fuse,把其中的conv和bn进行融合,通过一些数学转换把bn层融合到conv里面,还有一些例如DBB,RepVGG等等模块支持融合的,这些在fuse阶段都会进行融合,融合后可以一般都可以得到比融合前更快的推理速度,而且基本不影响精度.</p>
+</li>
+<li><p>FPS如何计算？</p>
+<p>在运行val.py后最后会出来Speed: 0.1ms preprocess, 5.4ms inference, 0.0ms loss, 0.4ms postprocess per image这行输出,这行输出就代表了每张图的前处理,推理,loss,后处理的时间,当然在val.py过程中是不需要计算loss的,所以为0,FPS最严谨来说就是1000(1s)&#x2F;(preprocess+inference+postprocess),没那么严谨的话就是只除以inference的时间,还有一个问题就是batchsize应该设置为多少,其实这行输出就已经是每张图的时间了,但是batchsize还是会对这个时间有所影响,主要是关于并行处理的问题,GPU中可以一次处理多个batch的数据,也可以只处理一个数据,但是处理多batch的数据比处理一个数据的时候整体速度要快,举个例子,比如我有1000张图,我分别设置batchsize为32和batchsize为1,整体运行的时间百分之99都是batchsize为32的快,因此这就导致不同batch输出的时间不同,至于该设置多少来计算FPS,貌似众说纷纭,所以这里我也不好给意见.<br>附上yolov5作者对于FPS和Batch的一个实验链接: <a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5/discussions/6649">https://github.com/ultralytics/yolov5/discussions/6649</a></p>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
+  id="post-hello-world"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/10/30/hello-world/"
+    >Hello World</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/10/30/hello-world/" class="article-date">
+  <time datetime="2023-10-30T09:01:00.943Z" itemprop="datePublished">2023-10-30</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+  </article>
+  
+
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2023
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
